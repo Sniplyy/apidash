@@ -45,10 +45,7 @@ puts "Response Code: #{response.code}"
       );
 
       Uri? uri = rec.$1;
-
-      if (uri == null) {
-        return "";
-      }
+      if (uri == null) return null;
 
       var templateStart = jj.Template(kTemplateStart);
       result += templateStart.render({

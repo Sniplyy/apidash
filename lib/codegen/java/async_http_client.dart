@@ -122,10 +122,7 @@ public class Main {
         requestModel.enabledParams,
       );
       Uri? uri = rec.$1;
-
-      if (uri == null) {
-        return "";
-      }
+      if (uri == null) return null;
 
       result += kStringStart;
       if (requestModel.hasFormData) {

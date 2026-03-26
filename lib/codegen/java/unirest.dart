@@ -71,10 +71,7 @@ public class Main {
 
       // uri is already generated based on url and enabled request params
       Uri? uri = rec.$1;
-
-      if (uri == null) {
-        return "";
-      }
+      if (uri == null) return null;
 
       // this is the common import and will be imported for every generated code snippet
       result += kStringUnirestImports;

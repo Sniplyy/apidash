@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:apidash/utils/utils.dart';
 import 'package:apidash/widgets/widgets.dart';
 import 'package:apidash/consts.dart';
+import 'package:apidash/open_responses/widgets/open_responses_viewer.dart';
 import 'button_share.dart';
 
 class ResponseBodySuccess extends StatefulWidget {
@@ -179,6 +180,11 @@ class _ResponseBodySuccessState extends State<ResponseBodySuccess> {
                         sseOutput: widget.sseOutput,
                         aiRequestModel: widget.aiRequestModel,
                       ),
+                    ),
+                  ),
+                ResponseBodyView.visualize => Expanded(
+                    child: OpenResponsesViewer(
+                      body: widget.body,
                     ),
                   ),
               }

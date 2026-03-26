@@ -3,6 +3,7 @@ import 'package:apidash_core/apidash_core.dart';
 import 'package:apidash/models/models.dart';
 import 'package:apidash/utils/utils.dart';
 import 'package:apidash/consts.dart';
+import 'package:apidash/open_responses/open_responses_detector.dart';
 import 'error_message.dart';
 import 'response_body_success.dart';
 
@@ -57,6 +58,11 @@ class ResponseBody extends StatelessWidget {
     var formattedBody = isSSE
         ? responseModel.sseOutput!.join('\n')
         : responseModel.formattedBody;
+
+    // Auto-detect Open Responses schema and prepend the Visualize option.
+    if (!isSSE && isOpenResponsesJson(body)) {
+      options = [ResponseBodyView.visualize, ...options];
+    }
 
     if (formattedBody == null) {
       options = [...options];

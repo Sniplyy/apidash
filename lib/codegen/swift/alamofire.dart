@@ -63,6 +63,7 @@ dispatchMain()
       var rec =
           getValidRequestUri(requestModel.url, requestModel.enabledParams);
       Uri? uri = rec.$1;
+      if (uri == null) return null;
 
       var headers = requestModel.enabledHeadersMap;
 

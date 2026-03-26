@@ -39,6 +39,7 @@ const kMinRequestEditorDetailsCardPaneSize = 300.0;
 final kHomeScaffoldKey = GlobalKey<ScaffoldState>();
 final kEnvScaffoldKey = GlobalKey<ScaffoldState>();
 final kHisScaffoldKey = GlobalKey<ScaffoldState>();
+final kExplorerScaffoldKey = GlobalKey<ScaffoldState>();
 
 const kTabAnimationDuration = Duration(milliseconds: 200);
 const kTabHeight = 40.0;
@@ -159,6 +160,7 @@ enum ResponseBodyView {
   raw("Raw", Icons.text_snippet_rounded),
   answer("Answer", Icons.abc),
   sse("SSE", Icons.stream),
+  visualize("Visualize", Icons.auto_awesome_rounded),
   none("Preview", Icons.warning);
 
   const ResponseBodyView(this.label, this.icon);
@@ -183,6 +185,15 @@ const kPreviewCodeRawBodyViewOptions = [
 const kSSERawBodyViewOptions = [ResponseBodyView.sse, ResponseBodyView.raw];
 const kAnswerRawBodyViewOptions = [
   ResponseBodyView.answer,
+  ResponseBodyView.raw,
+];
+const kVisualizeRawBodyViewOptions = [
+  ResponseBodyView.visualize,
+  ResponseBodyView.raw,
+];
+const kVisualizePreviewRawBodyViewOptions = [
+  ResponseBodyView.visualize,
+  ResponseBodyView.preview,
   ResponseBodyView.raw,
 ];
 
@@ -516,6 +527,9 @@ const kLabelHistory = "History";
 const kLabelLogs = "Logs";
 const kLabelAbout = "About";
 const kLabelSettings = "Settings";
+const kLabelExplore = "Explore";
+const kLabelAPIExplorer = "API Explorer";
+const kLabelImportToWorkspace = "Import to Workspace";
 
 // Settings Page
 const kLabelSwitchThemeMode = "Switch Theme Mode";

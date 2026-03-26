@@ -103,6 +103,7 @@ semaphore.wait()
 
       var rec = getValidRequestUri(requestModel.url, requestModel.enabledParams);
       Uri? uri = rec.$1;
+      if (uri == null) return null;
 
       if (requestModel.hasFormData) {
         result += kTemplateFormDataImport;

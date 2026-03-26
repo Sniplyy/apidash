@@ -321,9 +321,9 @@ class CollectionStateNotifier
       return;
     }
 
-    RequestModel? requestModel = state![requestId];
-    if (requestModel?.httpRequestModel == null &&
-        requestModel?.aiRequestModel == null) {
+    RequestModel requestModel = state![requestId]!;
+    if (requestModel.httpRequestModel == null &&
+        requestModel.aiRequestModel == null) {
       return;
     }
 
@@ -332,7 +332,7 @@ class CollectionStateNotifier
       activeEnvironmentModelProvider,
     );
 
-    RequestModel executionRequestModel = requestModel!.copyWith();
+    RequestModel executionRequestModel = requestModel.copyWith();
 
     if (!requestModel.preRequestScript.isNullOrEmpty()) {
       executionRequestModel = await ref

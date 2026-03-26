@@ -37,7 +37,7 @@ class _AIExampleState extends State<AIExample> {
     inputPromptController.text = 'Apple';
   }
 
-  generateAIResponse({bool stream = false}) {
+  void generateAIResponse({bool stream = false}) {
     setState(() {
       output = "";
     });

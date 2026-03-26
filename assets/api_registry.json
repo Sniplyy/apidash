@@ -1,0 +1,715 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-03-25T18:09:06.395736+00:00",
+  "categories": [
+    "AI",
+    "Data",
+    "Developer",
+    "E-Commerce",
+    "Finance",
+    "Maps",
+    "Media",
+    "News",
+    "Social",
+    "Weather",
+    "Other"
+  ],
+  "endpoints": [
+    {
+      "api_name": "OpenAI",
+      "base_url": "https://api.openai.com",
+      "path": "/v1/chat/completions",
+      "method": "POST",
+      "summary": "Chat Completion",
+      "description": "Send a list of messages and get an AI-generated reply. Supports GPT-4o, GPT-4, GPT-3.5-turbo and more.",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Content-Type": "application/json"
+      },
+      "body_template": "\"{\\n  \\\"model\\\": \\\"gpt-4o-mini\\\",\\n  \\\"messages\\\": [\\n    {\\\"role\\\": \\\"user\\\", \\\"content\\\": \\\"Hello!\\\"}\\n  ]\\n}\"",
+      "tags": [
+        "AI"
+      ],
+      "category": "AI",
+      "id": "fbcdf67f-de69-5644-b9aa-2cbd55aca2e3",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "OpenAI",
+      "base_url": "https://api.openai.com",
+      "path": "/v1/images/generations",
+      "method": "POST",
+      "summary": "Generate Image (DALL\u00b7E)",
+      "description": "Generate images from a text prompt using DALL\u00b7E 3.",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY",
+        "Content-Type": "application/json"
+      },
+      "body_template": "\"{\\n  \\\"model\\\": \\\"dall-e-3\\\",\\n  \\\"prompt\\\": \\\"A futuristic city at sunset\\\",\\n  \\\"n\\\": 1,\\n  \\\"size\\\": \\\"1024x1024\\\"\\n}\"",
+      "tags": [
+        "AI"
+      ],
+      "category": "AI",
+      "id": "728869bc-1c7c-5af1-9486-8df0b190fee2",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Google Gemini",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "path": "/v1beta/models/gemini-2.0-flash:generateContent",
+      "method": "POST",
+      "summary": "Generate Content",
+      "description": "Generate text using Google Gemini 2.0 Flash model.",
+      "query_params": {
+        "key": "YOUR_API_KEY"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "\"{\\n  \\\"contents\\\": [\\n    {\\\"parts\\\": [{\\\"text\\\": \\\"Explain quantum computing in simple terms.\\\"}]}\\n  ]\\n}\"",
+      "tags": [
+        "AI"
+      ],
+      "category": "AI",
+      "id": "258337b0-e4b0-5605-ba75-e392ee29805e",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "OpenWeatherMap",
+      "base_url": "https://api.openweathermap.org",
+      "path": "/data/2.5/weather",
+      "method": "GET",
+      "summary": "Current Weather",
+      "description": "Get the current weather conditions for any city worldwide.",
+      "query_params": {
+        "q": "London",
+        "appid": "YOUR_API_KEY",
+        "units": "metric"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Weather"
+      ],
+      "category": "Weather",
+      "id": "c121f82d-190c-58ef-99fd-2280613a74e8",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "OpenWeatherMap",
+      "base_url": "https://api.openweathermap.org",
+      "path": "/data/2.5/forecast",
+      "method": "GET",
+      "summary": "5 Day Weather Forecast",
+      "description": "Get a 5-day weather forecast with 3-hour steps for any location.",
+      "query_params": {
+        "q": "London",
+        "appid": "YOUR_API_KEY",
+        "units": "metric"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Weather"
+      ],
+      "category": "Weather",
+      "id": "8fdb1c24-a864-5d4a-af37-00686676e3b1",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Open-Meteo",
+      "base_url": "https://api.open-meteo.com",
+      "path": "/v1/forecast",
+      "method": "GET",
+      "summary": "Weather Forecast (Free, No Key)",
+      "description": "Free weather forecast API with no API key required. Provides hourly & daily data.",
+      "query_params": {
+        "latitude": "52.52",
+        "longitude": "13.41",
+        "current_weather": "true"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Weather"
+      ],
+      "category": "Weather",
+      "id": "80f8b487-e127-5038-aeed-5fa425dac058",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "CoinGecko",
+      "base_url": "https://api.coingecko.com",
+      "path": "/api/v3/simple/price",
+      "method": "GET",
+      "summary": "Crypto Price",
+      "description": "Get current prices of multiple cryptocurrencies in any currency.",
+      "query_params": {
+        "ids": "bitcoin,ethereum",
+        "vs_currencies": "usd"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Finance"
+      ],
+      "category": "Finance",
+      "id": "746ebce2-125b-51c7-99a9-0223d298a4d5",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "CoinGecko",
+      "base_url": "https://api.coingecko.com",
+      "path": "/api/v3/coins/markets",
+      "method": "GET",
+      "summary": "Crypto Markets List",
+      "description": "Get a paginated list of all cryptocurrencies with market data.",
+      "query_params": {
+        "vs_currency": "usd",
+        "order": "market_cap_desc",
+        "per_page": "10"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Finance"
+      ],
+      "category": "Finance",
+      "id": "0e8a9760-ff22-55b2-a308-fb1f4128d95f",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "ExchangeRate-API",
+      "base_url": "https://v6.exchangerate-api.com",
+      "path": "/v6/YOUR_API_KEY/latest/USD",
+      "method": "GET",
+      "summary": "Currency Exchange Rates",
+      "description": "Get real-time currency exchange rates relative to a base currency.",
+      "query_params": {},
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Finance"
+      ],
+      "category": "Finance",
+      "id": "0f1954aa-cf5d-5784-9a7a-55da44994ed5",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "GitHub",
+      "base_url": "https://api.github.com",
+      "path": "/repos/{owner}/{repo}",
+      "method": "GET",
+      "summary": "Get Repository Info",
+      "description": "Fetch metadata about a GitHub repository including stars, forks, and language.",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_GITHUB_TOKEN",
+        "Accept": "application/vnd.github+json"
+      },
+      "body_template": null,
+      "tags": [
+        "Developer"
+      ],
+      "category": "Developer",
+      "id": "10c669b8-f79c-59d8-b3ee-18e916ddee7f",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "GitHub",
+      "base_url": "https://api.github.com",
+      "path": "/search/repositories",
+      "method": "GET",
+      "summary": "Search Repositories",
+      "description": "Search GitHub repositories by keyword, language, or stars.",
+      "query_params": {
+        "q": "flutter stars:>1000",
+        "sort": "stars",
+        "per_page": "10"
+      },
+      "headers": {
+        "Accept": "application/vnd.github+json"
+      },
+      "body_template": null,
+      "tags": [
+        "Developer"
+      ],
+      "category": "Developer",
+      "id": "9c709373-0187-5a5a-8c6a-7c446a623c5b",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "JSONPlaceholder",
+      "base_url": "https://jsonplaceholder.typicode.com",
+      "path": "/posts",
+      "method": "GET",
+      "summary": "List Posts",
+      "description": "Free fake REST API for testing. Returns 100 sample blog posts.",
+      "query_params": {},
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Developer"
+      ],
+      "category": "Social",
+      "id": "1d7837bf-6555-5139-9b29-c2a6ee649e2a",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "JSONPlaceholder",
+      "base_url": "https://jsonplaceholder.typicode.com",
+      "path": "/posts",
+      "method": "POST",
+      "summary": "Create Post",
+      "description": "Simulate creating a post via a fake REST API (returns mocked response).",
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body_template": "\"{\\n  \\\"title\\\": \\\"My new post\\\",\\n  \\\"body\\\": \\\"Post content here\\\",\\n  \\\"userId\\\": 1\\n}\"",
+      "tags": [
+        "Developer"
+      ],
+      "category": "Social",
+      "id": "2847e6cf-1999-5457-afa8-054b4e4e2b4b",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "NewsAPI",
+      "base_url": "https://newsapi.org",
+      "path": "/v2/top-headlines",
+      "method": "GET",
+      "summary": "Top Headlines",
+      "description": "Get breaking news headlines from 80,000+ global sources.",
+      "query_params": {
+        "country": "us",
+        "apiKey": "YOUR_API_KEY",
+        "pageSize": "10"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "News"
+      ],
+      "category": "News",
+      "id": "e99cadf4-c607-518f-bdcd-c6c38623875d",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "NewsAPI",
+      "base_url": "https://newsapi.org",
+      "path": "/v2/everything",
+      "method": "GET",
+      "summary": "Search Articles",
+      "description": "Search through millions of articles from 80,000+ sources.",
+      "query_params": {
+        "q": "technology",
+        "apiKey": "YOUR_API_KEY",
+        "language": "en"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "News"
+      ],
+      "category": "News",
+      "id": "665e8c37-5f13-591a-a19a-b88a079331b6",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "OpenCage Geocoding",
+      "base_url": "https://api.opencagedata.com",
+      "path": "/geocode/v1/json",
+      "method": "GET",
+      "summary": "Forward Geocoding",
+      "description": "Convert a human-readable address to geographic coordinates.",
+      "query_params": {
+        "q": "Eiffel Tower, Paris",
+        "key": "YOUR_API_KEY"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Maps"
+      ],
+      "category": "Maps",
+      "id": "5b8b90d0-359e-580b-b898-e2be3220756c",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "ip-api",
+      "base_url": "http://ip-api.com",
+      "path": "/json/{query}",
+      "method": "GET",
+      "summary": "IP Geolocation",
+      "description": "Get geographic location, ISP, and timezone from an IP address. Free, no key needed.",
+      "query_params": {},
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Maps"
+      ],
+      "category": "Maps",
+      "id": "3fcaf315-c2de-56e6-8ded-3a90050f67cc",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Mailchimp Marketing",
+      "base_url": "https://<dc>.api.mailchimp.com",
+      "path": "/3.0/lists",
+      "method": "GET",
+      "summary": "Get Mailing Lists",
+      "description": "Retrieve all mailing lists / audiences in your Mailchimp account.",
+      "query_params": {},
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      },
+      "body_template": null,
+      "tags": [
+        "Communication"
+      ],
+      "category": "AI",
+      "id": "d77a4448-e840-59ec-b3fd-9f9f65f0ce86",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Pexels",
+      "base_url": "https://api.pexels.com",
+      "path": "/v1/search",
+      "method": "GET",
+      "summary": "Search Photos",
+      "description": "Search for high-quality free stock photos on Pexels.",
+      "query_params": {
+        "query": "nature",
+        "per_page": "10"
+      },
+      "headers": {
+        "Authorization": "YOUR_API_KEY"
+      },
+      "body_template": null,
+      "tags": [
+        "Media"
+      ],
+      "category": "Media",
+      "id": "f9415c66-9c2c-5f22-a4f9-a0fc1d89e1ef",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "GIPHY",
+      "base_url": "https://api.giphy.com",
+      "path": "/v1/gifs/search",
+      "method": "GET",
+      "summary": "Search GIFs",
+      "description": "Search the GIPHY library for animated GIFs by keyword.",
+      "query_params": {
+        "api_key": "YOUR_API_KEY",
+        "q": "cats",
+        "limit": "10"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Media"
+      ],
+      "category": "Media",
+      "id": "1e9ebe71-6f6b-59bb-b209-082481ce4d7f",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "REST Countries",
+      "base_url": "https://restcountries.com",
+      "path": "/v3.1/all",
+      "method": "GET",
+      "summary": "All Countries",
+      "description": "Get data about all countries: name, capital, currencies, languages, flags and more.",
+      "query_params": {
+        "fields": "name,capital,currencies,languages,flags"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Data"
+      ],
+      "category": "Developer",
+      "id": "31788ff4-7789-53d2-8f34-406d58984f38",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Open Library",
+      "base_url": "https://openlibrary.org",
+      "path": "/search.json",
+      "method": "GET",
+      "summary": "Search Books",
+      "description": "Search the Open Library catalog for books, authors, and editions.",
+      "query_params": {
+        "q": "harry potter",
+        "limit": "10"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Data"
+      ],
+      "category": "Data",
+      "id": "6f0a0c61-39e2-50f9-88d7-0bbea8976087",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "NASA APOD",
+      "base_url": "https://api.nasa.gov",
+      "path": "/planetary/apod",
+      "method": "GET",
+      "summary": "Astronomy Picture of the Day",
+      "description": "Get NASA's Astronomy Picture of the Day along with its explanation.",
+      "query_params": {
+        "api_key": "DEMO_KEY"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Data"
+      ],
+      "category": "Other",
+      "id": "1638b5e6-c138-5853-ac19-c1e1c83c6cc1",
+      "auth": {
+        "required": true,
+        "type": "apiKey",
+        "hint": "Add your API key in the Authorization header"
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Open Food Facts",
+      "base_url": "https://world.openfoodfacts.org",
+      "path": "/api/v0/product/{barcode}.json",
+      "method": "GET",
+      "summary": "Get Food Product by Barcode",
+      "description": "Get nutritional information for a food product using its barcode.",
+      "query_params": {},
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Health"
+      ],
+      "category": "E-Commerce",
+      "id": "25c4bb2b-aaf6-5919-9ce5-48dac660f7ff",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    },
+    {
+      "api_name": "Joke API",
+      "base_url": "https://v2.jokeapi.dev",
+      "path": "/joke/Any",
+      "method": "GET",
+      "summary": "Random Joke",
+      "description": "Get a random joke from the JokeAPI. Supports filtering by category, language and blacklist flags.",
+      "query_params": {
+        "safe-mode": "true"
+      },
+      "headers": {},
+      "body_template": null,
+      "tags": [
+        "Other"
+      ],
+      "category": "Other",
+      "id": "db5587cd-db6b-56b0-b2cd-81f5a46b369d",
+      "auth": {
+        "required": false,
+        "type": "none",
+        "hint": ""
+      },
+      "sample_response": {
+        "status": 200,
+        "body": "{}"
+      }
+    }
+  ]
+}

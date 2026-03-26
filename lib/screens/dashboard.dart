@@ -5,6 +5,7 @@ import 'package:apidash/providers/providers.dart';
 import 'package:apidash/widgets/widgets.dart';
 import 'package:apidash/consts.dart';
 import 'package:apidash/dashbot/dashbot.dart';
+import 'package:apidash/api_explorer/screens/api_explorer_page.dart';
 import 'common_widgets/common_widgets.dart';
 import 'envvar/environment_page.dart';
 import 'home_page/home_page.dart';
@@ -79,16 +80,30 @@ class Dashboard extends ConsumerWidget {
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                     kVSpacer10,
+                    IconButton(
+                      tooltip: kLabelExplore,
+                      isSelected: railIdx == 3,
+                      onPressed: () {
+                        ref.read(navRailIndexStateProvider.notifier).state = 3;
+                      },
+                      icon: const Icon(Icons.explore_outlined),
+                      selectedIcon: const Icon(Icons.explore),
+                    ),
+                    Text(
+                      kLabelExplore,
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
+                    kVSpacer10,
                     Badge(
                       backgroundColor: Theme.of(context).colorScheme.error,
                       isLabelVisible:
-                          ref.watch(showTerminalBadgeProvider) && railIdx != 3,
+                          ref.watch(showTerminalBadgeProvider) && railIdx != 4,
                       child: IconButton(
                         tooltip: kLabelLogs,
-                        isSelected: railIdx == 3,
+                        isSelected: railIdx == 4,
                         onPressed: () {
                           ref.read(navRailIndexStateProvider.notifier).state =
-                              3;
+                              4;
                           ref.read(showTerminalBadgeProvider.notifier).state =
                               false;
                         },
@@ -124,7 +139,7 @@ class Dashboard extends ConsumerWidget {
                         padding: const EdgeInsets.only(bottom: 16.0),
                         child: NavbarButton(
                           railIdx: railIdx,
-                          buttonIdx: 4,
+                          buttonIdx: 5,
                           selectedIcon: Icons.settings,
                           icon: Icons.settings_outlined,
                           label: kLabelSettings,
@@ -150,6 +165,7 @@ class Dashboard extends ConsumerWidget {
                   HomePage(),
                   EnvironmentPage(),
                   HistoryPage(),
+                  ApiExplorerPage(),
                   TerminalPage(),
                   SettingsPage(),
                 ],
