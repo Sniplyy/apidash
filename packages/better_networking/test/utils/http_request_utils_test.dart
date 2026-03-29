@@ -197,6 +197,36 @@ void main() {
         [kvRow1, kvRow3],
       );
     });
+
+    // Regression test: duplicate rows must each respect their own positional
+    // enabled flag. Before the fix, indexOf always returned the first match
+    // index, causing both duplicates to use isRowEnabledList[0].
+    test('Duplicate rows each use their own positional enabled flag', () {
+      const dupRow = NameValueModel(name: 'dup', value: 'same');
+      expect(
+        getEnabledRows(
+          [dupRow, dupRow, dupRow],
+          [true, false, true],
+        ),
+        [dupRow, dupRow], // only positions 0 and 2 are enabled
+      );
+    });
+
+    test('All-duplicate rows all disabled returns empty list', () {
+      const dupRow = NameValueModel(name: 'x', value: '1');
+      expect(
+        getEnabledRows([dupRow, dupRow], [false, false]),
+        [],
+      );
+    });
+
+    test('All-duplicate rows all enabled returns all rows', () {
+      const dupRow = NameValueModel(name: 'x', value: '1');
+      expect(
+        getEnabledRows([dupRow, dupRow], [true, true]),
+        [dupRow, dupRow],
+      );
+    });
   });
 
   group('Testing getRequestBody', () {
